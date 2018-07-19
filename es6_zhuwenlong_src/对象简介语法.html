@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象简介语法</title>
+</head>
+
+<body>
+  <script>
+    let name = 'zhuwenlong'
+    let age = 18
+    let json = {
+      name,//   name: name,
+      age,//   age: age
+      // showA: function () {
+      //   return this.name;
+      // }
+      // 简化版写法// 此处不能使用箭头函数。es6中this指向只能在函数块中
+      showA() {
+        return this.name;
+      }
+    }
+    console.log(json)
+    console.log(json.showA())
+    // Object.is()// 比较两个值是否相等
+  </script>
+</body>
+
+</html>

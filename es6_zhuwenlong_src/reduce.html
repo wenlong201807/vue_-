@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>reduce</title>
+</head>
+
+<body>
+  <script>
+    console.log('*****数组求和********')
+    /// 1=>prev  2=>cur
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let res = arr.reduce((prev, cur, index, arr) => {
+      console.log(prev, cur, index, arr)
+      return prev + cur;
+    })
+    console.log(res)
+    console.log('****数组求阶乘**********')
+    /// 1=>prev  2=>cur
+    let arr2 = [2, 2, 4];
+    let res2 = arr2.reduce((prev, cur, index, arr) => {
+      console.log(prev, cur, index, arr)
+      return Math.pow(prev, cur);// 前一个数为底数，后一个数为指数
+    })
+    console.log(res2)
+    console.log('**以前的***幂次方运算**************')
+
+    console.log(Math.pow(2, 3))
+
+    console.log('******es6 的幂运算*************')
+    console.log('****数组求阶乘***reduce--从左往右*******')
+    /// 1=>prev  2=>cur
+    let arr3 = [2, 2, 5];
+    let res3 = arr3.reduce((prev, cur, index, arr) => {
+      console.log(prev, cur, index, arr)
+      return prev ** cur;// 前一个数为底数，后一个数为指数
+    })
+    console.log(res3)
+
+    console.log('******es6 的幂运算*************')
+    console.log('****数组求阶乘***reduceRight--从右往左*******')
+    /// 1=>prev  2=>cur
+    let arr4 = [2, 2, 5];
+    let res4 = arr4.reduce((prev, cur, index, arr) => {
+      console.log(prev, cur, index, arr)
+      return prev ** cur;// 前一个数为底数，后一个数为指数
+    })
+    console.log(res4)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>use_mod</title>
+</head>
+
+<body>
+  <pre>
+  import 特点
+  1.import 可以是相对路径，也可以是绝对路径
+  2.import模块指挥导入一次，无论你引用多少次
+  3.import './modules/1.js';如果这么使用，相当于引入文件
+  4.有提升效果，，import会自动提升到顶部，首先执行
+  5.导出去模块内容，如果里面有定时器更改，外面也会改动，而commomjs规范不能做到这一点
+  6.import（）类似node里面的require，可以动态引入，默认import语法不能写道if之类里面
+</pre>
+
+  <script type="module">
+    import './modules/1.js';// 把整个文件都引入了，不是我们想要的 结果
+    import { a, a2, a3 } from './modules/1.js';
+
+    console.log(a, a2, a3)
+
+    // import { aakkk, bkkk, ckkk } from './modules/2.js';
+    // console.log(aakkk, bkkk, ckkk)
+
+    import * as modTwo from './modules/2.js';
+    console.log(modTwo)
+    console.log(modTwo.aakkk)
+    //***************
+    import a33, { k1, k2, k3 } from './modules/3.js';
+    console.log(a33, k1, k2, k3)
+    //******************
+    import mod, { show, sum, h, bh } from './modules/4.js';
+    let p1 = new mod.Person('WENLONG');
+    console.log(p1.showName());
+
+    show();
+    sum();
+    console.log(h, bh)
+
+    let mod12 = 1122;
+    if (mod12 == 1122) {
+      import { a } from './modules/1.js';
+    } else {
+      import { aa } from './modules/2.js';
+    }
+  </script>
+</body>
+
+</html>

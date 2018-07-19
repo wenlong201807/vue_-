@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>promise7</title>
+</head>
+
+<body>
+  <script>
+    // Promise.all([p1, p2, p3, p4])：把promise打包，仍到一个数组里面，打包完还是一个promise对象
+    // 必须确保，所有的promise对象，都是resolve状态，都是成功的状态
+
+    let p1 = Promise.resolve('aaa')
+    let p2 = Promise.resolve('aaa2')
+    let p3 = Promise.resolve('aaa3')
+    let p4 = Promise.resolve('aaa4')
+    Promise.all([p1, p2, p3, p4]).then(res => {
+      let [res1, res2, res3, res4] = res;
+      console.log(res1, res2, res3, res4)
+    })
+    console.log('********************')
+
+    let p11 = Promise.resolve('aaa')
+    let p21 = Promise.reject('aaa2')
+    let p31 = Promise.reject('aaa3')
+    let p41 = Promise.resolve('aaa4')
+    Promise.race([p11, p21, p31]).then(res => {//只要有一个成功了，就返回
+      console.log(res)
+    }).catch(err => {
+      console.log(err);
+    })
+  </script>
+</body>
+
+</html>

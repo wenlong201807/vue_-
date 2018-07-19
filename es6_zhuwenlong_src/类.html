@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>类</title>
+</head>
+
+<body>
+  <script>
+    //之前定义类的方法
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    // Person.prototype.showName = function () {
+    //   return `名字是${this.name}`//此处必须使用反引号
+    // }
+    // Person.prototype.aage = function () {
+    //   return `年龄是${this.age}`//此处必须使用反引号
+    // }
+
+    //*********************
+    Object.assign(Person.prototype, {
+      showName() {
+        return `名字是${this.name}`//此处必须使用反引号
+      },
+      aage() {
+        return `年龄是${this.age}`//此处必须使用反引号
+      }
+    })
+    var p1 = new Person('zhuwenlong', 18)
+
+    console.log(p1.showName())
+    console.log(p1.aage())
+  </script>
+</body>
+
+</html>

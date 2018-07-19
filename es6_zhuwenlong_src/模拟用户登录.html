@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模拟用户登录</title>
+</head>
+
+<body>
+  <script>
+    let status = 1;
+    let userLogin = (resolve, reject) => {
+      setTimeout(() => {
+        if (status == 1) {
+          resolve({
+            data: 'sss', msg: '登入成功', token: 'sdfgdsfgdfaeherbebnegb'
+          });
+        } else {
+          reject('失败了')
+        }
+      }, 2000)
+    }
+
+    console.log('*****************')
+    let getUserInfo = (resolve, reject) => {
+      setTimeout(() => {
+        if (status == 1) {
+          resolve({
+            data: 'sss', msg: '获取用户信息成功', token: 'sdfgdsfgdfaeherbebnegb'
+          });
+        } else {
+          reject('失败了')
+        }
+      }, 1000)
+    }
+    //*******************
+    new Promise(userLogin).then(res => {
+      console.log('用户登录成功')
+      return new Promise(getUserInfo);
+    }).then(res => {
+      console.log('获取用户信息成功')
+      console.log('res')
+    })
+  </script>
+</body>
+
+</html>

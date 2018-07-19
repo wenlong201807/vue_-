@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let json = { a: 1 }
+    let json2 = { b: 2 }
+    let json3 = {
+      c: 3,
+      b: 23,
+      a: 111,
+
+    }
+
+    console.log('Object.assing***把多个对象合并成一个对象原来的对象中有相同的键名，则多个对象合并后，相同的部分，按照后面覆盖前面的')
+    let obj = Object.assign({}, json, json2, json3)
+    console.log(obj)
+    console.log('****assign可以合并数组也可以合并对象**不改变原数组，原对象*********')
+    let arr2 = ['apple', 'banana', 'orange']
+    let arr3 = Object.assign([], arr2)
+    console.log(arr3)
+    console.log(arr2)
+    arr3.push('asdf')
+    console.log(arr2)
+    console.log(arr3)
+  </script>
+</body>
+
+</html>

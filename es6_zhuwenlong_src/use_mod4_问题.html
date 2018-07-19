@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>use_mod4</title>
+</head>
+
+<body>
+  <script type="module">
+    let sign = 1;
+
+    function config() {
+      switch (sign) {
+        case 1:
+          return './modules/1.js';
+          break;
+      }
+    }
+    //**********************
+    import(config(1)).then(res => {
+      $(function () {
+        $('body').css({ background: 'gray' })
+      })
+    })
+
+  </script>
+</body>
+
+</html>

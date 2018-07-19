@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>map</title>
+</head>
+
+<body>
+  <h1>map</h1>
+  <script>
+    let arr = [
+      { title: 'aaa', read: 100, hot: true },
+      { title: 'aaa', read: 100, hot: true },
+      { title: 'aaa', read: 100, hot: true },
+      { title: 'aaa', read: 100, hot: true },
+    ];
+
+    // 非常有用，做数据交互‘映射’
+    // 正常情况下，需要配合return,返回 的是一个新的数组
+    // 若是没有return 相当于forEach
+    let newArr = arr.map((item, index, arr) => {
+      console.log(item, index, arr);
+      return 1;
+    })
+    console.log(newArr)
+    console.log('*************')
+    // 模拟真是数据前后端分离之后，对数据的操作
+
+    let newArr1 = arr.map((item, index, arr) => {
+      let json = {};
+      json.t = `^__^${item.title}-----`;
+      json.r = item.read + 200;
+      json.hot = item.hot == true && '真棒！！！';
+
+      return json;
+    })
+    console.log(newArr1)
+  </script>
+</body>
+
+</html>

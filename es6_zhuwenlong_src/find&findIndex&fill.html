@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>find</title>
+</head>
+
+<body>
+  <script>
+    let arr = [11, 22, 102, 55, 66, 88, 1002, 16]
+    let res = arr.find((val, index, arr) => {
+      return val > 100;// 返回第一个符合条件的数，如果没有找到，就返回underfined
+    })
+    console.log(res)
+
+    console.log('******findIndex()*********')
+    let arr2 = [11, 22, 102, 55, 66, 88, 1002, 16]
+    let res2 = arr2.findIndex((val, index, arr) => {
+      return val > 1000;// 返回第一个符合条件的数的索引值，如果没有找到，就返回-1
+    })
+    console.log(res2)
+
+    console.log('*****fill************')
+    let arr3 = new Array(10)
+    console.log(arr3)
+    arr3.fill('默认值', 2, 5)
+    console.log(arr3)
+    console.log('****includes*******')
+
+    // 类似作用 arr.indexOf()
+    let b = arr.includes(66)// 数组中时否包含，如果不存在，就返回false 存在就返回true
+    console.log(b)
+  </script>
+</body>
+
+</html>

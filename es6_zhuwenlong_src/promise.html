@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>promise</title>
+</head>
+
+<body>
+
+
+  <script>
+    //语法规则
+    let a = 100;
+    let b = 1;
+    let promise = new Promise(function (resolve, reject) {
+      // resolve:// 成功的回调
+      // reject://失败的回调
+      if (a == 10) {
+        resolve('成功')
+      } else {
+        reject('失***败')
+      }
+    })
+    promise.then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+    new Promise((res, rej) => {
+      if (b == 2) {
+        res('henhao')
+      } else {
+        rej('kkkkk')
+      }
+    }).then(res => { console.log(res) }).catch(err => { console.log(err) })
+  </script>
+</body>
+
+</html>

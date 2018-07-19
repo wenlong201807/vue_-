@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>filter</title>
+</head>
+
+<body>
+  <h1>filter</h1>
+  <script>
+    let arr = [
+      { title: 'aaa', read: 100, hot: true },
+      { title: 'aaa', read: 100, hot: false },
+      { title: 'aaa', read: 100, hot: false },
+      { title: 'aaa', read: 100, hot: true },
+      { title: 'aaa', read: 100, hot: false },
+      { title: 'aaa', read: 100, hot: true },
+    ];
+
+    // 过滤 ，把符合条件的数据保留下来
+    // 如果回调函数为ture的，就保留下来
+    let newArr = arr.filter((item, index, arr) => {
+      // console.log(item, index, arr);
+      //   return item.hot == true;//默认就是为true
+      return item.hot;//默认就是为true
+    })
+    console.log(newArr)
+
+  </script>
+</body>
+
+</html>

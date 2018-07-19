@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>foreach</title>
+</head>
+
+<body>
+
+
+  <h1>foreach循环</h1>
+  <script>
+    let arr = ['apple', 'banana', 'orange', 'tomato'];
+    //原始版
+    arr.forEach(function (val, index, arr) {//代替普通for循环的 
+      console.log(val, index, arr);
+    })
+    console.log('******************')
+    //箭头函数版版
+    arr.forEach((val, index, arr) => {//代替普通for循环的 
+      console.log(val, index, arr);
+    })
+    console.log('******************')
+    //使用this改变指针版
+    arr.forEach(function (val, index, arr) {//代替普通for循环的 
+      console.log(this, val, index, arr);
+    }, 156)
+  </script>
+</body>
+
+</html>

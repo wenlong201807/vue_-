@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let json = {
+      a: 1, b: 2, c: 3,
+    }
+
+    for (let key of Object.keys(json)) {
+      console.log(key)
+    }
+    console.log('*****换了一种写法***********')
+    let { keys, values, entries } = Object;
+    let json2 = {
+      a: 51, b: 52, c: 53,
+    }
+
+    for (let key of keys(json2)) {
+      console.log(key)
+    }
+    for (let value of values(json2)) {
+      console.log(value)
+    }
+    for (let item of entries(json2)) {
+      console.log(item, '****', item[0], item[1])
+    }
+    for (let [key, val] of entries(json2)) {
+      console.log(key, val)
+    }
+
+    console.log('***********************')
+    let json3 = { a: 55, b: 66 }
+    let json4 = { ...json3 };
+    console.log(json4)
+    console.log(json3)
+    delete json3.b;
+    console.log(json3)
+
+  </script>
+</body>
+
+</html>

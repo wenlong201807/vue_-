@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function show() {
+      let args = Array.from(arguments);
+      args.push(6);
+      console.log(args)
+    }
+    show(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+    console.log('*************')
+    let str = 'zhuwenlong';
+    // 将类数组转换成真数组
+    let arr1 = Array.from(str)// 作用：把类数组（获取一组元素，arguments）对象转换成数组***前提需要有length属性
+    console.log(arr1)
+    // 老方法，，将数组转换成真数组
+    let arr2 = str.split('')
+    console.log(arr2)
+    console.log('*******需要具备length属性*****************')
+    let json1 = {
+      0: 'apple',
+      1: 'banana',
+      2: 'orange',
+    }
+    let arr3 = Array.from(json1)
+    console.log(arr3)// []
+    // 当json2添加了length属性时，就可以出现数组内容了
+    console.log('*******需要具备length属性*****************')
+    let json2 = {
+      0: 'apple',
+      1: 'banana',
+      2: 'orange',
+      length: 3,// 决定数组可以输出的项目数***3
+    }
+    let arr4 = Array.from(json2)
+    console.log(arr4)// []
+
+    console.log('*****of可以**一组值***转换成数组***************')
+    let arr5 = Array.of('apple', 'banana', 'orange')
+    console.log(arr5)
+    console.log('*****另一种写法*********')
+    Array.of = function (...args) {
+      return args;
+
+    }
+    console.log(arr5)
+  </script>
+</body>
+
+</html>

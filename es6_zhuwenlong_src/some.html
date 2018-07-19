@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>some</title>
+</head>
+
+<body>
+  <script>
+    let arr = ['apple', 'banana', 'orange', 'tomato'];
+    // 只要返回值中有一个符合条件的就返回true
+    let b = arr.some(function (val, index, arr) {//代替普通for循环的 
+      console.log(val, index, arr);
+      return val == 'apple';
+    })
+    console.log(b)
+    console.log('******')
+
+    let bbb = arr.some(function (val, index, arr) {//代替普通for循环的 
+      console.log(val, index, arr);
+      return val == 'appleffff';
+    })
+    console.log(bbb)
+  </script>
+</body>
+
+</html>

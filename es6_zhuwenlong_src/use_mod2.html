@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>use_mod2</title>
+</head>
+
+<body>
+
+  <pre>
+        import 特点
+        1.import 可以是相对路径，也可以是绝对路径
+        2.import模块指挥导入一次，无论你引用多少次
+        3.import './modules/1.js';如果这么使用，相当于引入文件
+        4.有提升效果，，import会自动提升到顶部，首先执行
+        5.导出去模块内容，如果里面有定时器更改，外面也会改动，而commomjs规范不能做到这一点
+        6.import（）类似node里面的require，可以动态引入，默认import语法不能写道if之类里面
+        import()  的返回值是一个promise对象，
+        优点：1.按需加载
+        2.可以写到if中
+        3.路径也可以写动态的
+        
+      </pre>
+  <script type="module">
+    import('./modules/1.js').then(res => {
+      console.log(res);
+      console.log(res.a);
+    })
+    //******************
+    import('https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js').then(res => {
+      console.log(res)
+      $(function () {
+        //alert(123)
+        // 动态引入
+        $('body').css({
+          background: 'red'
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>

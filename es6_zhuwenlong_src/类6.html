@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>类6</title>
+</head>
+
+<body>
+  <script>
+    let aaa = 'zhuwenlong';
+    let bbb = 'hhh';
+    class Person {
+      constructor(name, age) {// 构造函数，调用new，自动执行
+        // console.log(`构造函数执行了${name},${age}`)
+        this.name = name;
+        this.age = age;
+      }
+      showName() {
+        return `名字是${this.name}`
+      }
+      showAge() {
+        return `年龄为${this.age}`
+      }
+      aaa() {
+        return '随便了。。。'
+      }
+      [aaa]() {//使用变量的方式**注意了！！
+        return '随便了。。。'
+      }
+      [aaa + bbb]() {//使用变量的方式**灵活运用字符串拼接的方式
+        return '随便了。。。'
+      }
+    }
+    let p1 = new Person('zhuwenlong', 18)
+    console.log(p1)
+    console.log(p1.showAge())
+    console.log(p1.showName())
+    console.log(p1.aaa())
+    console.log(p1.zhuwenlong())
+    console.log(p1.zhuwenlonghhh())
+    console.log(p1[aaa + bbb]())
+    //***********************
+    //json中也可以这么定义
+    let yy = 'yssy';
+    let xx = 'xssx';
+    let json = {
+      [yy + xx]: `welcome ladfsgkjdfslgk j`
+    }
+    console.log(json.yssyxssx)
+    console.log(json[yy + xx])
+  </script>
+</body>
+
+</html>

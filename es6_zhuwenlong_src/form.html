@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>form</title>
+</head>
+
+<body>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    window.onload = function () {
+      let aLi = document.querySelectorAll('li');
+      // 之前的方法转换
+      let aaa = [].slice.call(aLi);
+      console.log(aaa)
+      let arrLI = Array.from(aLi);// 把类数组转换成真正的数组，就可以使用数组 的方法了
+      arrLI.pop();
+      console.log(arrLI);
+    }
+  </script>
+</body>
+
+</html>

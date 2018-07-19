@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>类2</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor(name, age) {// 构造函数，调用new，自动执行
+        // console.log(`构造函数执行了${name},${age}`)
+        this.name = name;
+        this.age = age;
+      }
+      showName() {
+        return `名字是${this.name}`
+      }
+      showAge() {
+        return `年龄为${this.age}`
+      }
+    }
+    let p1 = new Person('zhuwenlong', 18)
+    console.log(p1)
+    console.log(p1.showAge())
+    console.log(p1.showName())
+    //*****************************
+    // 另一种写法
+    const Person = class {
+      constructor(name, age) {// 构造函数，调用new，自动执行
+        // console.log(`构造函数执行了${name},${age}`)
+        this.name = name;
+        this.age = age;
+      }
+      showName() {
+        return `名字是${this.name}`
+      }
+      showAge() {
+        return `年龄为${this.age}`
+      }
+    }
+    let p1 = new Person('zhuwenlong', 18)
+    console.log(p1)
+    console.log(p1.showAge())
+    console.log(p1.showName())
+  </script>
+</body>
+
+</html>
