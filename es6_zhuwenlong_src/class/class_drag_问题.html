@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class_drag</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      top: 0px;
+      cursor: pointer;
+    }
+
+    .left {
+      left: 20px;
+    }
+
+    .right {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div1" class="box left">div1</div>
+  <div id="div2" class="box right">div2</div>
+
+
+  <script>
+    // 普通的拖拽***父类
+    class Drag {
+      constructor(id) {
+        this.oDiv = document.querySelector(id);
+        this.disx = 0;
+        this.disy = 0;
+        this.init();
+      }
+      init() {
+        this.oDiv.onmousedown = function (ev) {
+          this.disx = ev.clientX - this.oDiv.offsetLeft;
+          this.disy = ev.clientY - this.oDiv.offsetTop;
+
+          document.onmousemove = this.fnMove.bind(this);
+          document.onmouseup = this.fnUp.bind(this);
+
+          return false;// 阻止默认事件，阻止点击文字事件
+        }.bind(this);
+      }
+      fnMove(ev) {
+        this.oDiv.style.left = ev.clientX - this.disx + 'px';
+        this.oDiv.style.top = ev.clientY - this.disy + 'px';
+      }
+      fnUp() {
+        document.onmousemove = null;
+      }
+    }
+
+    // 子类***限制范围
+    class LimitDrag extends Drag {
+      constructor(id) {
+        super(id)
+      }
+      fnMove(ev) {
+        super.fnMove(ev);
+        // 限制范围
+        if (this.oDiv.offsetLeft <= 20) {
+          this.oDiv.offsetLeft = 20;
+        }
+      }
+    }
+
+    //调用
+    new Drag('#div1')
+    new LimitDrag('#div2')
+  </script>
+</body>
+
+</html>

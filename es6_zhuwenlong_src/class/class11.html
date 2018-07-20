@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class10</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor() {
+
+      }
+      showName() {
+        return `这是showName方法`;
+      }
+      static aaa() {
+        return `我是静态中的方法，调用我，不需要使用new。直接使用类名**Person`;
+      }
+    }
+    let p1 = new Person();
+    console.log(p1.showName())
+    console.log(Person.aaa())
+  </script>
+</body>
+
+</html>

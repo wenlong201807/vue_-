@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class_extent</title>
+</head>
+
+<body>
+  <script>
+
+    //**********************以前的继承方式
+
+    // 父类
+    function Person(name) {
+      this.name = name;
+    }
+    Person.prototype.showName = function () {
+      return `名字是：${this.name}`;
+    }
+
+    // 子类
+    function Student(name, skill) {
+      Person.call(this, name);//继承属性
+      this.skill = skill;
+    }
+    Student.prototype = new Person();// 继承父类的方法的写法
+
+
+    // 调用
+    let stu1 = new Student('zhuwenlong', '逃学')
+    console.log(stu1.name)
+    console.log(stu1.showName())
+
+    //********************es6里面的继承的写法
+    // 父类
+    class Person2 {
+      constructor(name) {
+        this.name = name;
+      }
+      showName() {
+        console.log('福福福类里面的showName')
+        return `名字为：${this.name}`;
+      }
+    }
+
+    // 子类
+    class Student2 extends Person2 {
+      constructor(name, skill) {
+        super(name);
+        this.skill = skill;
+      }
+      showName() {
+        super.showName()//调用父类中的同名方法
+        // 以下属于子类自己的方法定义内容
+        console.log('子类里面的showName');
+      }
+      showSkill() {
+        return `哥们的技能是：${this.skill}`;
+      }
+    }
+
+
+    // 调用
+
+    let stu2 = new Student2('zhu_class_extends', '新方法的调用父类')
+    console.log(stu2.showName())
+    console.log(stu2.skill)
+    console.log(stu2.showSkill())
+
+  </script>
+</body>
+
+</html>
