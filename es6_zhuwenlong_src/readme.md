@@ -7,3 +7,4 @@
   fn.call(this,args1,args2,...)
   fn.apply(this,[args1,args2,...])
   fn.bind()
+  aggfvafdg
