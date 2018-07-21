@@ -9,23 +9,22 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 
+
 <body>
     <div id="app">
-        {{message+'-' +name}} 我的年龄：{{age*3}}<br> {{isOk?'123':'456'}}
+        <div :style="{fontsize:size+'px',backgroundColor:bgC,width:width+'px',height:height+'px',display:block}"></div>
     </div>
     <script>
         var app = new Vue({
-            // 一般用id选择器选择当前页面的标签。
-
             el: "#app",
             data: {
-                message: "hello world",
-                name: "zhou",
-                age: 12,
-                isOk: false
+                size: 300,
+                bgC: 'red',
+                width: 200,
+                height: 100
             }
         })
     </script>
 </body>
 
-</html
+</html>

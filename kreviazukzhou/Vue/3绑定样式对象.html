@@ -7,25 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+        
+        .text {
+            font-size: 400px;
+        }
+    </style>
 </head>
+
 
 <body>
     <div id="app">
-        {{message+'-' +name}} 我的年龄：{{age*3}}<br> {{isOk?'123':'456'}}
+        <!-- 混合普通的HTML标签样式及绑定样式对象 -->
+        <div :class="{active:isActive,'text ':hasEArror}">你好啊</div>
+
     </div>
+
     <script>
         var app = new Vue({
-            // 一般用id选择器选择当前页面的标签。
-
             el: "#app",
             data: {
-                message: "hello world",
-                name: "zhou",
-                age: 12,
-                isOk: false
+                isActive: false,
+                hasEArror: true
             }
         })
     </script>
 </body>
 
-</html
+</html>

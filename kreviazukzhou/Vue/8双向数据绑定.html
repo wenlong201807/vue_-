@@ -9,23 +9,21 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 
+
 <body>
     <div id="app">
-        {{message+'-' +name}} 我的年龄：{{age*3}}<br> {{isOk?'123':'456'}}
+        <!-- v-model可以直接指向data中的属性，双向绑定就建立了 -->
+        <input type="text" v-model='msg'>
+        <p>您输入的信息是：{{msg}}</p>
     </div>
     <script>
         var app = new Vue({
-            // 一般用id选择器选择当前页面的标签。
-
             el: "#app",
             data: {
-                message: "hello world",
-                name: "zhou",
-                age: 12,
-                isOk: false
+                msg: "你好"
             }
         })
     </script>
 </body>
 
-</html
+</html>
