@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <p>{{number}}</p>
+        <!-- Vue对象中可以添加methods属性，开发者可以把事件处理函数的逻辑放到methods中。 -->
+        <button @click='getNumber'>加</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                number: 1
+            },
+            methods: {
+                getNumber: function() {
+                    this.number++
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
