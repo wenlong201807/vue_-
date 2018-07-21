@@ -20,7 +20,7 @@
   <div id="app">
     <!-- <div @click="handleDivClick" :class="{actived:isActived}">绑定点击事件</div> -->
     <div @click="handleDivClick" :class="[actived,activedOne]">绑定点击事件</div>
-    <div :style="styleObj">我是内连样式效果</div>
+    <div :style="[styleObj,{fontSize:'20px'}]" @click="handleStyleClick">我是内连样式效果</div>
   </div>
 
   <script>
@@ -32,7 +32,7 @@
         actived: '',
         activedOne: "actived_one",
         styleObj: {
-          color: 'yellow',
+          color: 'blue',
           cursor: 'pointer'
         }
 
@@ -41,7 +41,9 @@
         handleDivClick: function () {
           // this.isActived = !this.isActived;//使用对象的形式
           this.actived = this.actived === 'actived' ? "" : 'actived';
-
+        },
+        handleStyleClick: function () {
+          this.styleObj.color = this.styleObj.color === "blue" ? "red" : "blue";
         }
       }
 
