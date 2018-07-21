@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <p>{{number}}</p>
+        <input type="button" name="" value="增加" @click='getNUmber()'>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                number: 1
+            },
+            methods: {
+                getNUmber: function(e) {
+                    this.number += 1
+                }
+            },
+            watch: {
+                number: function(val, oldVal) {
+                    console.log("val:" + val + "-oldVal:" + oldVal)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
