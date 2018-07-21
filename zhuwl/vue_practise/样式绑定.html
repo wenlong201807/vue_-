@@ -19,7 +19,7 @@
 <body>
   <div id="app">
     <!-- <div @click="handleDivClick" :class="{actived:isActived}">绑定点击事件</div> -->
-
+    <div @click="handleDivClick" :class="[actived,activedOne]">绑定点击事件</div>
   </div>
 
   <script>
@@ -27,11 +27,15 @@
     var app = new Vue({
       el: '#app',
       data: {
-        isActived: false
+        // isActived: false
+        actived: '',
+        activedOne: "actived_one"
       },
       methods: {
         handleDivClick: function () {
-          this.isActived = !this.isActived;
+          // this.isActived = !this.isActived;//使用对象的形式
+          this.actived = this.actived === 'actived' ? "" : 'actived';
+
         }
       }
 
