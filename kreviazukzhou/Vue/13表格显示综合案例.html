@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>地址</th>
+            </thead>
+            <!-- 如果列表有数据，直接输出列表，否则提示用户没有数据 -->
+            <tbody v-if='userList.length>0'>
+                <tr v-for='item in userList'>
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.address}}</td>
+                </tr>
+            </tbody>
+            <tbody v-else>
+                <tr>
+                    <td colspan="3">没有数据哦</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+                el: "#app",
+                data: {
+                    userList: []
+                }
+            })
+            // 每秒写入一个数据
+        setInterval(function() {
+            app.userList.push({
+                'name': 'malun',
+                'age': 18,
+                'address': '北京黑地下室'
+            })
+        }, 1000)
+    </script>
+</body>
+
+</html>

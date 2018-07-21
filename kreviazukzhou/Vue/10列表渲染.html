@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>地址</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for='item in userList'>
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                userList: [{
+                    'name': 'malun',
+                    'age': 18,
+                    'address': '北京黑地下室'
+                }, {
+                    'name': 'flydragon',
+                    'age': 22,
+                    'address': '厦门的很多热的地方'
+                }, {
+                    'name': 'temp',
+                    'age': 25,
+                    'address': '东北松花江上'
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>
