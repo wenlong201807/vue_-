@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>条件渲染</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <p>一个整体不能被其他分隔开</p>
+      <div v-if="show==='a'">this is A</div>
+      <div v-else-if="show==='b'">this is B</div>
+      <div v-else>this is C</div>
+    </div>
+    <div>
+      <p>一个整体不能被其他分隔开:此处使用虚拟dom的机制，当key值不同时，不复用有的相同标签，当key相同时，则复用</p>
+      <div v-if="showTow">
+        用户名：
+        <input type="text" key="user" name="" id="">
+      </div>
+      <div v-else>
+        邮箱名：
+        <input type="text" key="email" name="" id="">
+      </div>
+    </div>
+  </div>
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        show: 'a',
+        showTow: false
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>
