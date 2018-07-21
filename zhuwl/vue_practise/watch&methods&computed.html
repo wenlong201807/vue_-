@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>计算属性，方法，侦听器</title>
+</head>
+
+<body>
+  <div id="app">
+    {{fullName }}{{age}}
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        firstName: "zhu",
+        lastName: "wenlong",
+        fullName: "zhu wenlong",
+        age: 2128
+
+      },
+      // 太复杂了，只能是最后的选择
+      watch: {
+        firstName: function () {
+          console.log('计算了一次');
+          this.fullName = this.fullName + '  ' + this.lastName;
+        },
+        lastName: function () {
+          console.log('计算了一次');
+          this.fullName = this.fullName + '  ' + this.lastName;
+        }
+      }
+      // 方法调用。没有缓存机制，页面需要每次渲染
+      // methods: {//方法调用要加()===加括号
+      //   fullName: function () {
+      //     return this.firstName + ' ===== ' + this.lastName
+      //   }
+      // }
+      // 计算属性，可以使用内置缓存，数据不改变，就可以使用原来缓存的数据
+      // computed: {
+      //   fullName: function () {
+      //     console.log('计算了一次')
+      //     return this.firstName + '  ***  ' + this.lastName
+      //   }
+      // }
+    })
+  </script>
+</body>
+
+</html>
