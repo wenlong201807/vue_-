@@ -20,6 +20,7 @@
   <div id="app">
     <!-- <div @click="handleDivClick" :class="{actived:isActived}">绑定点击事件</div> -->
     <div @click="handleDivClick" :class="[actived,activedOne]">绑定点击事件</div>
+    <div :style="styleObj">我是内连样式效果</div>
   </div>
 
   <script>
@@ -29,7 +30,12 @@
       data: {
         // isActived: false
         actived: '',
-        activedOne: "actived_one"
+        activedOne: "actived_one",
+        styleObj: {
+          color: 'yellow',
+          cursor: 'pointer'
+        }
+
       },
       methods: {
         handleDivClick: function () {
