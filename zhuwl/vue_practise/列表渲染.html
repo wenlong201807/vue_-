@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>列表渲染</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- // 依据实际中的需求，需要给标签条件一个唯一标识符---id 值 -->
+    <!-- 可以循环数组 -->
+    <template v-for="(item ,index) of list" :key="item.id">
+      <div>
+        {{item.text}}**{{index}}
+      </div>
+      <span>同级标签{{item.text}}</span>
+      <hr>
+    </template>
+    <!-- 也可以循环对象 -->
+    <div v-for="(item ,key ,index) of userInfo">
+      {{item}}**{{key}}**{{index}}
+    </div>
+  </div>
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        // 对数字的有效操作7中方式（不能使用下标方式 ）
+        // 或者改变数据的引用地址 
+        list: [
+          { id: 0001, text: 'hello1' },
+          { id: 0002, text: 'hello2' },
+          { id: 0003, text: 'hello3' },
+          { id: 0004, text: 'hello4' },
+          { id: 0005, text: 'hello5' },
+        ],
+        userInfo: {
+          name: 'wenlong',
+          age: 22,
+          gender: 'male',
+          salary: 'secret'
+        }
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>
