@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>计算属性</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <table>
+      <tr>
+        <td>生日</td>
+        <td>{{ getBirthday }}</td>
+      </tr>
+      <tr>
+        <td>年龄</td>
+        <td>{{ age }}</td>
+      </tr>
+      <tr>
+        <td>地址</td>
+        <td>{{ address }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        birthday: 976877950,
+        age: 19,
+        address: '安徽芜湖无为县'
+      },
+      computed: {
+        getBirthday: function () {
+          let m = new Date(this.birthday);
+          return m.getFullYear() + '年' + m.getMonth() + '月' + m.getDay() + '日';
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

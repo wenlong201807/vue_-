@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>内联样式绑定</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div v-bind:style="{fontSize:size + 'px', backgroundColor:bgcolor,width:width}">
+      vue入门系列教程
+    </div>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          size: 30,
+          width: 200 + 'px',
+          bgcolor: 'red'
+        }
+      })
+    </script>
+  </div>
+</body>
+
+</html>
